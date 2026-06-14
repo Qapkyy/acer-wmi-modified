@@ -260,6 +260,7 @@ static ssize_t temperature_show(struct device_driver *driver, char *buf)
 	return sysfs_emit(buf, "%d\n", (value - 2731) * 100);
 }
 
+/**
 static ssize_t health_mode_show(struct device_driver *driver, char *buf)
 {
 	int len = sprintf(buf, "%d\n", battery_status.health_mode);
@@ -267,6 +268,12 @@ static ssize_t health_mode_show(struct device_driver *driver, char *buf)
 		pr_err("Invalid sprintf len: %d\n", len);
 
 	return len;
+}
+**/
+
+static ssize_t health_mode_show(struct device_driver *driver, char *buf)
+{
+	return sysfs_emit(buf, "%d\n", battery_status.health_mode);
 }
 
 static ssize_t health_mode_store(struct device_driver *driver, const char *buf,
@@ -287,6 +294,7 @@ static ssize_t health_mode_store(struct device_driver *driver, const char *buf,
 	return count;
 }
 
+/**
 static ssize_t calibration_mode_show(struct device_driver *driver, char *buf)
 {
 	int len = sprintf(buf, "%d\n", battery_status.calibration_mode);
@@ -294,6 +302,12 @@ static ssize_t calibration_mode_show(struct device_driver *driver, char *buf)
 		pr_err("Invalid sprintf len: %d\n", len);
 
 	return len;
+}
+**/
+
+static ssize_t calibration_mode_show(struct device_driver *driver, char *buf)
+{
+	return sysfs_emit(buf, "%d\n", battery_status.calibration_mode);
 }
 
 static ssize_t calibration_mode_store(struct device_driver *driver,
