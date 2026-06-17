@@ -284,7 +284,7 @@ static void update_state(struct acer_battery_data *data)
 }
 
 /* ------------------------------------------------------------------ */
-/* sysfs attributes (per-device)                                        */
+/* sysfs attributes                                                   */
 /* ------------------------------------------------------------------ */
 
 static ssize_t temperature_show(struct device *dev,
