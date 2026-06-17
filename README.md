@@ -95,47 +95,47 @@ echo "options wmi-battery-acer enable_health_mode=1" | sudo tee /etc/modprobe.d/
 Once the driver is loaded, sysfs nodes will be available under:
 
 ```
-/sys/bus/wmi/drivers/acer-wmi-battery/<device>/
+/sys/bus/wmi/drivers/wmi-battery-acer/<device>/
 ```
 
 ### Reading Status
 
 **Battery temperature** (in milli-Celsius):
 ```bash
-cat /sys/bus/wmi/drivers/acer-wmi-battery/*/temperature
+cat /sys/bus/wmi/drivers/wmi-battery-acer/*/temperature
 # Example output: 29800  →  29.8°C
 ```
 
 **Health mode status** (`-1` = unsupported, `0` = disabled, `1` = enabled):
 ```bash
-cat /sys/bus/wmi/drivers/acer-wmi-battery/*/health_mode
+cat /sys/bus/wmi/drivers/wmi-battery-acer/*/health_mode
 ```
 
 **Calibration mode status:**
 ```bash
-cat /sys/bus/wmi/drivers/acer-wmi-battery/*/calibration_mode
+cat /sys/bus/wmi/drivers/wmi-battery-acer/*/calibration_mode
 ```
 
 ### Changing Modes
 
 **Enable health mode** (charge limit ~80%):
 ```bash
-echo 1 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/*/health_mode
+echo 1 | sudo tee /sys/bus/wmi/drivers/wmi-battery-acer/*/health_mode
 ```
 
 **Disable health mode** (charge to full 100%):
 ```bash
-echo 0 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/*/health_mode
+echo 0 | sudo tee /sys/bus/wmi/drivers/wmi-battery-acer/*/health_mode
 ```
 
 **Enable calibration mode:**
 ```bash
-echo 1 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/*/calibration_mode
+echo 1 | sudo tee /sys/bus/wmi/drivers/wmi-battery-acer/*/calibration_mode
 ```
 
 **Disable calibration mode:**
 ```bash
-echo 0 | sudo tee /sys/bus/wmi/drivers/acer-wmi-battery/*/calibration_mode
+echo 0 | sudo tee /sys/bus/wmi/drivers/wmi-battery-acer/*/calibration_mode
 ```
 
 ### Module Parameters
@@ -164,7 +164,7 @@ sudo rmmod wmi-battery-acer
 **Sysfs path not found:**
 > Locate the exact path with:
 > ```bash
-> find /sys/bus/wmi/drivers/acer-wmi-battery/ -name "health_mode"
+> find /sys/bus/wmi/drivers/wmi-battery-acer/ -name "health_mode"
 > ```
 
 **Permission denied when writing to sysfs:**
