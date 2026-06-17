@@ -42,7 +42,7 @@ Ensure you have the necessary kernel headers and build tools installed on your d
 ## Clone and Compile
 Clone this repository and compile the kernel module using the provided Makefile:
  ```
- git clone https://github.com/Qapkyy/wmi-battery-acer.git](https://github.com/Qapkyy/wmi-battery-acer.git)
+ git clone [https://github.com/Qapkyy/wmi-battery-acer.git](https://github.com/Qapkyy/wmi-battery-acer.git)
  cd wmi-battery-acer
  make
  ```
