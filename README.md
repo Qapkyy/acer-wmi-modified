@@ -25,34 +25,34 @@ A lightweight Linux kernel WMI driver to manage battery features on the **Acer N
 Ensure you have the necessary kernel headers and build tools installed on your distribution.
 
 - **Ubuntu / Debian / Pop!_OS:**
-  '''
+  ```
   sudo apt update
   sudo apt install build-essential linux-headers-$(uname -r)
-  '''
+  ```
 - **Fedora:**
-  '''
+  ```
   sudo dnf update
   sudo dnf install kernel-devel kernel-headers development-tools
-  '''
+  ```
 - **Arch Linux:**
- '''
+ ```
  sudo pacman -S base-devel linux-headers
- '''
+ ```
 
 ## Clone and Compile
 Clone this repository and compile the kernel module using the provided Makefile:
- '''
+ ```
  git clone https://github.com/Qapkyy/wmi-battery-acer.git](https://github.com/Qapkyy/wmi-battery-acer.git)
  cd wmi-battery-acer
  make
-'''
+ ```
 ## Load the Module Manually
 You can test the module by inserting it into the running kernel:
-'sudo insmod wmi-battery-acer.ko'
+`sudo insmod wmi-battery-acer.ko`
 
 ## Usage
 Once the driver is successfully loaded, it creates device nodes in the sysfs system under the acer-wmi-battery driver path:
-'/sys/bus/wmi/drivers/wmi-battery-acer/'
+`/sys/bus/wmi/drivers/wmi-battery-acer/`
 
 ## Author
 _Qapky - qapkyy3@gmail.com_
