@@ -176,8 +176,7 @@ enum interface_flags {
 #define ACER_CAP_PLATFORM_PROFILE   BIT(10)
 #define ACER_CAP_FAN_SPEED_READ     BIT(11)
 #define ACER_CAP_NITRO_SENSE	    BIT(12)
-#define ACER_CAP_NITRO_SENSE_V4     BIT(13)
-#define ACER_CAP_NITRO_SENSE_V5     BIT(14)
+#define ACER_CAP_NITRO_SENSE_V5     BIT(13)
 
 static const struct key_entry acer_wmi_keymap[] __initconst = {
 	{KE_KEY, 0x01, {KEY_WLAN}},
