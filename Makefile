@@ -1,5 +1,5 @@
 MODNAME := qapkyy_qy
-obj-m   := $(MODNAME).o
+obj-m   := src/$(MODNAME).o
 
 KVER    ?= $(shell uname -r)
 KDIR    := /lib/modules/$(KVER)/build
