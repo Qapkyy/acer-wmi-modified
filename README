@@ -1,0 +1,33 @@
+Acer Nitro V16 Advanced Control Driver (qapkyy_qy)
+===================================================
+
+The qapkyy_qy kernel driver module provides an advanced hardware control
+interface explicitly tailored for the Acer Nitro V16 (ANV16-71) laptop platform
+on Linux architectures. This implementation functions as an isolated kernel module to
+completely decouple control mechanics from the native upstream acer-wmi
+subsystem, removing resource execution conflicts.
+
+This driver introduces programmatic controls directly missing under native
+Linux platform frameworks, including physical firmware-bound thermal profiles,
+direct fan hardware monitoring/speed automation, and non-volatile battery
+charging health limits.
+
+1. System Prerequisites
+-----------------------
+
+    Before executing the compiled automated structures, verify that your
+    target Linux operating system environment includes the mandatory platform
+    build headers:
+
+    * Linux Kernel Version: 6.x or newer recommended.
+    * Base System Packages: linux-headers (or linux-devel depending on
+      distribution) and standard build essentials (gcc, make, openssl).
+2. Installation (assume secure boot active.)
+--------------------------------------------
+
+    chmod +x setup.sh
+    bash setup.sh
+
+    * To examine target unit execution tracking logs:
+      sudo systemctl status qapkyy_qy.service
+
