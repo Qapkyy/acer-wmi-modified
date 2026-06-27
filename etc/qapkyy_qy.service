@@ -1,0 +1,15 @@
+[Unit]
+Description=Acer Nitro V16 Advanced Hardware Control Initializer (qapkyy_qy)
+DefaultDependencies=no
+After=systemd-modules-load.service systemd-sysctl.service
+BindsTo=sys-subsystem-platform-devices-$(MODNAME).device
+After=sys-subsystem-platform-devices-$(MODNAME).device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/$(MODNAME)-init.sh
+TimeoutStartSec=15
+
+[Install]
+RequiredBy=sys-subsystem-platform-devices-$(MODNAME).device
